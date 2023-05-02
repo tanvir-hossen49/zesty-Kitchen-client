@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -13,7 +14,7 @@ const NavigationBar = () => {
     <Navbar collapseOnSelect expand="lg">
       <Container>
         <Link to="/" className="nav-brand">
-          ZestyKitchen tanvir
+          ZestyKitchen
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
