@@ -72,7 +72,7 @@ a {
   background-size: cover;
 }
 .hero-section h1 {
-  font-size: 60px;
+  font-size: 62px;
   width: 80%;
   background: linear-gradient(to right, var(--primary-color), #ebdfd4);
   -webkit-background-clip: text;
