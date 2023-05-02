@@ -19,18 +19,16 @@ const NavigationBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mx-auto gap-lg-5 gap-3 mt-lg-0 mt-3">
+          <Nav className="mx-auto gap-lg-5 gap-3 text-dark fs-5 mt-lg-0 mt-3">
             <NavLink
               to="/"
-              className={`text-dark fs-5 ${({ isActive }) =>
-                isActive && "active"}`}
+              className={({ isActive }) => (isActive ? "active" : "default")}
             >
               Home
             </NavLink>
             <NavLink
               to="/blog"
-              className={`text-dark fs-5 ${({ isActive }) =>
-                isActive && "active"}`}
+              className={({ isActive }) => (isActive ? "active" : "default")}
             >
               Blog
             </NavLink>
@@ -43,12 +41,12 @@ const NavigationBar = () => {
                   <FaUserAlt />
                 </span>
 
-                <Link to="/logout" className="button">
+                <Link to="/logout" className="button login">
                   Logout
                 </Link>
               </>
             ) : (
-              <Link to="/login" className="button">
+              <Link to="/login" className="button login">
                 Login
               </Link>
             )}

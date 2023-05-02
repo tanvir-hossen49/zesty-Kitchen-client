@@ -20,7 +20,13 @@ a {
 
 .active {
   color: var(--primary-color);
+  font-weight: 600;
 }
+.default {
+  color: #403f3f;
+  font-weight: 400;
+}
+
 .nav-brand {
   font-weight: 700;
   font-size: 25px;
@@ -31,15 +37,24 @@ a {
 .nav-brand:hover {
   color: var(--primary-color);
 }
+
+.responsive-navbar-nav a {
+  color: #403f3f;
+}
 .button {
   background: var(--primary-color);
   border-radius: 8px;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 18px;
   line-height: 30px;
   color: #100f0f;
-  padding: 10px 20px;
+  padding: 5px 15px;
   transition: color 0.5s;
+}
+.button.login {
+  padding: 10px 20px !important;
+  font-size: 20px;
+  font-weight: 700;
 }
 .button:hover {
   color: var(--primary-color);
@@ -72,7 +87,7 @@ a {
   background-size: cover;
 }
 .hero-section h1 {
-  font-size: 62px;
+  font-size: 48px;
   width: 80%;
   background: linear-gradient(to right, var(--primary-color), #ebdfd4);
   -webkit-background-clip: text;
@@ -88,6 +103,26 @@ a {
   background: linear-gradient(to right, var(--primary-color), #ebdfd4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+/*
+------------------
+    CHEF CARD
+------------------*/
+.chef-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.chef-profile-picture img {
+  width: 200px;
+  height: 250px;
+  border-radius: 8px 8px 0px 0px;
+}
+@media screen and (max-width: 568px) {
+  .chef-card-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
 }
 /*
 ------------------

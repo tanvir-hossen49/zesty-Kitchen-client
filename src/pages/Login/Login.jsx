@@ -19,7 +19,7 @@ const Login = () => {
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
 
-      <Button className="button w-100">Submit</Button>
+      <Button className="  w-100">Submit</Button>
 
       <p className="text-center mt-3">
         New to ZestyKitchen ? <Link to="/register">Create an account</Link>
