@@ -20,7 +20,9 @@ const NavigationBar = () => {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto gap-lg-5 gap-3 mt-lg-0 mt-3">
-            <NavLink className="text-dark fs-5">Home</NavLink>
+            <NavLink to="/" className="text-dark fs-5">
+              Home
+            </NavLink>
             <NavLink className="text-dark fs-5">Blog</NavLink>
             <NavLink className="text-dark fs-5">Contract</NavLink>
           </Nav>
