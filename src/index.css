@@ -70,3 +70,33 @@ a {
   color: #95a0a7;
   padding: 0 26px 0 22px;
 }
+
+/*
+------------------
+    FOOTER
+------------------*/
+footer {
+  color: white;
+  background-color: #000;
+}
+
+.social-media-icon svg {
+  cursor: pointer;
+  margin: 20px 0 20px 30px;
+}
+.social-media-icon svg:first-child {
+  margin-left: 0px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+}
+.copyright-text {
+  padding-bottom: 10px;
+}
+.footer-card-heading {
+  font-weight: 700;
+  font-size: 25px;
+}
