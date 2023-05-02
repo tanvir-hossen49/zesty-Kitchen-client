@@ -13,7 +13,7 @@ const NavigationBar = () => {
     <Navbar collapseOnSelect expand="lg">
       <Container>
         <Link to="/" className="nav-brand">
-          ZestyKitchen
+          ZestyKitchen tanvir
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
