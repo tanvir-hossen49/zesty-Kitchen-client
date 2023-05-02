@@ -12,6 +12,12 @@
 a {
   text-decoration: none !important;
 }
+
+/*
+------------------
+    NAVIGATION BAR
+------------------*/
+
 .active {
   color: var(--primary-color);
 }
