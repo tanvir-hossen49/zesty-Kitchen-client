@@ -50,6 +50,45 @@ a {
   height: 0px;
   border: 1px solid #95a0a7;
 }
+
+/*
+------------------
+    BANNER SECTION
+------------------*/
+.hero-section {
+  width: 100%;
+  height: calc(100vh - 66px);
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(./assets/chef.jpg);
+  color: #ebdfd4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+.hero-section h1 {
+  font-size: 60px;
+  width: 80%;
+  background: linear-gradient(to right, var(--primary-color), #ebdfd4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-section p {
+  width: 80%;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.3em;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, var(--primary-color), #ebdfd4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /*
 ------------------
     LOGIN FORM
@@ -83,6 +122,10 @@ footer {
 .social-media-icon svg {
   cursor: pointer;
   margin: 20px 0 20px 30px;
+  transition: color 0.3s;
+}
+.social-media-icon svg:hover {
+  color: var(--primary-color);
 }
 .social-media-icon svg:first-child {
   margin-left: 0px;

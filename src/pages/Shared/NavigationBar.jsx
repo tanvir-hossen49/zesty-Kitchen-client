@@ -13,18 +13,27 @@ const NavigationBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg">
       <Container>
-        <Link to="/" className="nav-brand">
+        <Link to="/home" className="nav-brand">
           ZestyKitchen
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto gap-lg-5 gap-3 mt-lg-0 mt-3">
-            <NavLink to="/" className="text-dark fs-5">
+            <NavLink
+              to="/"
+              className={`text-dark fs-5 ${({ isActive }) =>
+                isActive && "active"}`}
+            >
               Home
             </NavLink>
-            <NavLink className="text-dark fs-5">Blog</NavLink>
-            <NavLink className="text-dark fs-5">Contract</NavLink>
+            <NavLink
+              to="/blog"
+              className={`text-dark fs-5 ${({ isActive }) =>
+                isActive && "active"}`}
+            >
+              Blog
+            </NavLink>
           </Nav>
 
           <Nav className="align-items-lg-center md:flex-rows">

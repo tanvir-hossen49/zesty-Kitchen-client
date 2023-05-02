@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const authInfo = {
-    user: "tanvir",
+    user: null,
     createUser,
     signInUser,
     logOutUser,
