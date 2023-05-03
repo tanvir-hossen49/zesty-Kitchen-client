@@ -70,7 +70,7 @@ const NavigationBar = () => {
                   />
                 </span>
 
-                <div onClick={handleLogOutUser}>
+                <div onClick={handleLogOutUser} className="mb-3 mb-lg-0">
                   <Link to="/login" className="button login">
                     Logout
                   </Link>

@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { showToast } from "../../utilities/showToast";
 import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
@@ -11,6 +11,9 @@ import GithubButtonComponent from "./GithubButton";
 
 const Login = () => {
   const { signInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = e => {
     e.preventDefault();
@@ -20,6 +23,7 @@ const Login = () => {
 
     signInUser(email, password)
       .then(result => {
+        navigate(from);
         showToast("success", "login successfull");
         form.reset();
       })

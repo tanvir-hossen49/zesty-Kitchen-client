@@ -67,6 +67,11 @@ const Blog = () => {
         <h2 className="fs-3 text-secondary fw-normal">
           2{")"}Validate React props using PropTypes
         </h2>
+
+        <p>
+          React provides a built-in package called PropTypes that allows you to
+          validate the data types of props passed to a component.
+        </p>
       </div>
     </Container>
   );
