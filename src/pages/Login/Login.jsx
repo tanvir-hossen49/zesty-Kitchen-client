@@ -1,25 +1,56 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import GoogleButton from "react-google-button";
 import GithubButton from "react-github-login-button";
+import { AuthContext } from "../../provider/AuthProvider";
+import { showToast } from "../../utilities/showToast";
+import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
 
 const Login = () => {
+  const { user, signInUser } = useContext(AuthContext);
+  const handleLogin = e => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signInUser(email, password)
+      .then(result => {
+        showToast("success", "login successfull");
+        form.reset();
+      })
+      .catch(error => {
+        showFirebaseError(error);
+      });
+  };
   return (
-    <Form className="container mt-4 login-form">
+    <Form onSubmit={handleLogin} className="container mt-4 login-form">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Control
+          type="email"
+          placeholder="Enter email"
+          name="email"
+          required={true}
+        />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control
+          type="password"
+          placeholder="Password"
+          name="password"
+          required={true}
+        />
       </Form.Group>
 
-      <Button className="  w-100">Submit</Button>
+      <Button className="w-100" type="submit">
+        Submit
+      </Button>
 
       <p className="text-center mt-3">
         New to ZestyKitchen ? <Link to="/register">Create an account</Link>

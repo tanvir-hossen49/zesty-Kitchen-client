@@ -15,7 +15,13 @@ const NavigationBar = () => {
       .then(() => {
         showToast("success", "logout successful");
       })
-      .catch(error => {});
+      .catch(error => {
+        const errorMessage = error.message
+          .split("/")[1]
+          .split(")")[0]
+          .toUpperCase();
+        showToast("error", errorMessage);
+      });
   };
 
   return (
