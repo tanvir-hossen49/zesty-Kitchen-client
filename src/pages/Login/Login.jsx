@@ -3,14 +3,14 @@ import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import GoogleButton from "react-google-button";
-import GithubButton from "react-github-login-button";
 import { AuthContext } from "../../provider/AuthProvider";
 import { showToast } from "../../utilities/showToast";
 import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
+import GoogleButtonComponent from "./GoogleButton";
+import GithubButtonComponent from "./GithubButton";
 
 const Login = () => {
-  const { signInUser, signInGoogle, signInGithub } = useContext(AuthContext);
+  const { signInUser } = useContext(AuthContext);
 
   const handleLogin = e => {
     e.preventDefault();
@@ -22,26 +22,6 @@ const Login = () => {
       .then(result => {
         showToast("success", "login successfull");
         form.reset();
-      })
-      .catch(error => {
-        showFirebaseError(error);
-      });
-  };
-
-  const handleGoogleSignIn = () => {
-    signInGoogle()
-      .then(result => {
-        showToast("success", "login in successful");
-      })
-      .catch(error => {
-        showFirebaseError(error);
-      });
-  };
-
-  const handleGithubSignIn = () => {
-    signInGithub()
-      .then(result => {
-        showToast("success", "login in successful");
       })
       .catch(error => {
         showFirebaseError(error);
@@ -84,8 +64,8 @@ const Login = () => {
         <div className="line"></div>
       </div>
 
-      <GoogleButton className="mx-auto mt-4" onClick={handleGoogleSignIn} />
-      <GithubButton className="mx-auto mt-4" onClick={handleGithubSignIn} />
+      <GoogleButtonComponent />
+      <GithubButtonComponent />
     </Form>
   );
 };

@@ -3,14 +3,14 @@ import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import GoogleButton from "react-google-button";
-import GithubButton from "react-github-login-button";
 import { AuthContext } from "../../provider/AuthProvider";
 import { showToast } from "../../utilities/showToast";
 import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
+import GoogleButtonComponent from "./GoogleButton";
+import GithubButtonComponent from "./GithubButton";
 
 const Register = () => {
-  const { user, createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const handleRegister = e => {
     e.preventDefault();
@@ -102,8 +102,8 @@ const Register = () => {
         <div className="line"></div>
       </div>
 
-      <GoogleButton className="mx-auto mt-4" />
-      <GithubButton className="mx-auto mt-4" />
+      <GoogleButtonComponent />
+      <GithubButtonComponent />
     </Form>
   );
 };
