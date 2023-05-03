@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefCard = ({ chefData }) => {
   const {
@@ -14,7 +15,11 @@ const ChefCard = ({ chefData }) => {
   return (
     <div className=" d-flex align-items-center gap-3 border rounded chef-card">
       <div className="chef-profile-picture">
-        <img src={chef_picture} alt="" />
+        <LazyLoadImage
+          src={chef_picture}
+          effect="blur"
+          placeholderSrc={chef_picture}
+        />
       </div>
       <div>
         <h4 className="fw-bolder">{chef_name}</h4>

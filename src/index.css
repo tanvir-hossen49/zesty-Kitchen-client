@@ -49,7 +49,7 @@ a {
   line-height: 30px;
   color: #100f0f;
   padding: 5px 15px;
-  transition: color 0.5s;
+  transition: color 0.3s;
 }
 .button.login {
   padding: 10px 20px !important;
@@ -113,11 +113,18 @@ a {
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
+.chef-profile-picture {
+  overflow: hidden;
+}
 .chef-profile-picture img {
   width: 220px;
   height: 250px;
   border-radius: 8px 8px 0px 0px;
   object-fit: cover;
+  transition: transform 0.5s;
+}
+.chef-profile-picture img:hover {
+  transform: scale(1.1);
 }
 @media screen and (max-width: 568px) {
   .chef-card-container {
