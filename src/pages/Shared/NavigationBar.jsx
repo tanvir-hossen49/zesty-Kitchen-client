@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { showToast } from "../../utilities/showToast";
+import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
 
 const NavigationBar = () => {
   const { user, logOutUser } = useContext(AuthContext);
@@ -16,11 +17,7 @@ const NavigationBar = () => {
         showToast("success", "logout successful");
       })
       .catch(error => {
-        const errorMessage = error.message
-          .split("/")[1]
-          .split(")")[0]
-          .toUpperCase();
-        showToast("error", errorMessage);
+        showFirebaseError(error);
       });
   };
 

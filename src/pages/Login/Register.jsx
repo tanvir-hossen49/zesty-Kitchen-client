@@ -7,6 +7,7 @@ import GoogleButton from "react-google-button";
 import GithubButton from "react-github-login-button";
 import { AuthContext } from "../../provider/AuthProvider";
 import { showToast } from "../../utilities/showToast";
+import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
 
 const Register = () => {
   const { user, createUser, updateUserProfile } = useContext(AuthContext);
@@ -35,20 +36,12 @@ const Register = () => {
             form.reset();
           })
           .catch(error => {
-            const errorMessage = error.message
-              .split("/")[1]
-              .split(")")[0]
-              .toUpperCase();
-            showToast("error", errorMessage);
+            showFirebaseError(error);
             form.reset();
           });
       })
       .catch(error => {
-        const errorMessage = error.message
-          .split("/")[1]
-          .split(")")[0]
-          .toUpperCase();
-        showToast("error", errorMessage);
+        showFirebaseError(error);
         form.reset();
       });
   };
