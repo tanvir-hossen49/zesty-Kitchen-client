@@ -16,7 +16,7 @@ const Home = () => {
     <div>
       <HeroComponent />
 
-      <h2 className="text-center fs-1 fw-bold mt-5">Your_Chef</h2>
+      <h2 className="text-center fs-1 fw-bold mt-5">Our_Chef</h2>
       <div className="container mx-auto my-5 g-5 chef-card-container">
         {chefData?.map(singleData => {
           return <ChefCard key={singleData.id} chefData={singleData} />;

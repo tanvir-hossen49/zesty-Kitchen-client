@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <footer>
-      <div className="d-lg-flex align-items-center container justify-content-between mt-4">
+      <div className="d-lg-flex align-items-center container justify-content-between">
         <div>
           <h4>Get connected with us on social networks:</h4>
         </div>

@@ -155,6 +155,18 @@ a {
 
 /*
 ------------------
+    404 Page
+------------------*/
+.error-page {
+  background-image: url(./assets/bg.png);
+  width: 100%;
+  height: calc(100vh - 66px);
+}
+.error-text {
+  font-size: 60px;
+}
+/*
+------------------
     FOOTER
 ------------------*/
 footer {
