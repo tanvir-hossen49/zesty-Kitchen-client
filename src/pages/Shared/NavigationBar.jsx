@@ -32,13 +32,31 @@ const NavigationBar = () => {
             >
               Blog
             </NavLink>
+            <NavLink
+              to="/aboutus"
+              className={({ isActive }) => (isActive ? "active" : "default")}
+            >
+              About Us
+            </NavLink>
           </Nav>
 
           <Nav className="align-items-lg-center md:flex-rows">
             {user ? (
               <>
-                <span className="my-3 me-lg-3 my-md-0 fs-4" title={user}>
-                  <FaUserAlt />
+                <span
+                  className="my-3 me-lg-3 my-md-0 "
+                  title={user.displayName}
+                >
+                  <img
+                    src={user.photoURL}
+                    alt=""
+                    className="rounded-circle"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      objectFit: "cover",
+                    }}
+                  />
                 </span>
 
                 <Link to="/logout" className="button login">
