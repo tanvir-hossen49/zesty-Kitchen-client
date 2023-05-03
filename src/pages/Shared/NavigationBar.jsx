@@ -3,12 +3,20 @@ import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { FaUserAlt } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { showToast } from "../../utilities/showToast";
 
 const NavigationBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOutUser } = useContext(AuthContext);
+
+  const handleLogOutUser = () => {
+    logOutUser()
+      .then(() => {
+        showToast("success", "logout successful");
+      })
+      .catch(error => {});
+  };
 
   return (
     <Navbar collapseOnSelect expand="lg">
@@ -59,9 +67,11 @@ const NavigationBar = () => {
                   />
                 </span>
 
-                <Link to="/logout" className="button login">
-                  Logout
-                </Link>
+                <div onClick={handleLogOutUser}>
+                  <Link to="/login" className="button login">
+                    Logout
+                  </Link>
+                </div>
               </>
             ) : (
               <Link to="/login" className="button login">
