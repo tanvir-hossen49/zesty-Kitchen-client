@@ -10,7 +10,7 @@ import { showToast } from "../../utilities/showToast";
 import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
 
 const Login = () => {
-  const { user, signInUser, signInGoogle } = useContext(AuthContext);
+  const { signInUser, signInGoogle, signInGithub } = useContext(AuthContext);
 
   const handleLogin = e => {
     e.preventDefault();
@@ -37,6 +37,17 @@ const Login = () => {
         showFirebaseError(error);
       });
   };
+
+  const handleGithubSignIn = () => {
+    signInGithub()
+      .then(result => {
+        showToast("success", "login in successful");
+      })
+      .catch(error => {
+        showFirebaseError(error);
+      });
+  };
+
   return (
     <Form onSubmit={handleLogin} className="container mt-4 login-form">
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -74,7 +85,7 @@ const Login = () => {
       </div>
 
       <GoogleButton className="mx-auto mt-4" onClick={handleGoogleSignIn} />
-      <GithubButton className="mx-auto mt-4" />
+      <GithubButton className="mx-auto mt-4" onClick={handleGithubSignIn} />
     </Form>
   );
 };
