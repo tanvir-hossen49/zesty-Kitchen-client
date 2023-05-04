@@ -24,6 +24,7 @@ const Register = () => {
 
     if (password.length < 6) {
       showToast("warn", "password too sort");
+      return;
     }
 
     createUser(email, password)
