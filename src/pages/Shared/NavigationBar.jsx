@@ -61,10 +61,7 @@ const NavigationBar = () => {
                   title={user.displayName}
                 >
                   <img
-                    src={
-                      user.photoURL ||
-                      "https://xsgames.co/randomusers/avatar.php?g=male"
-                    }
+                    src={user.photoURL}
                     alt=""
                     className="rounded-circle"
                     style={{
