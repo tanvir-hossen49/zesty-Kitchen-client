@@ -4,6 +4,7 @@ import HeroComponent from "./HeroComponent";
 import ChefCard from "./ChefCard";
 import { Spinner } from "react-bootstrap";
 import "../../styles/home.css";
+import PopularRecipes from "./PopularRecipes";
 
 const Home = () => {
   const [chefData, setChefData] = useState([]);
@@ -32,6 +33,8 @@ const Home = () => {
           })
         )}
       </div>
+
+      <PopularRecipes />
     </div>
   );
 };

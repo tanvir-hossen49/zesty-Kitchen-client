@@ -18,7 +18,7 @@ const RecipeCard = ({ recipes }) => {
 
   return (
     <div>
-      <h2 className="text-center fw-bold fs-2 mt-4">Our_recipes</h2>
+      <h2 className="text-center fw-bold fs-2 mt-4">recipes</h2>
       <Row xs={1} md={3} className="g-4 mt-3">
         {recipes.map(recipe => {
           const {

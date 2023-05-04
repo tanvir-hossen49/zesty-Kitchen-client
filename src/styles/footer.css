@@ -3,6 +3,45 @@ footer {
   background-color: #000;
 }
 
+.footer-middle-row h3 {
+  width: 100%;
+  text-align: left;
+  color: white;
+  font-size: 1.4em;
+  white-space: nowrap;
+}
+
+.footer-middle-row ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.footer-middle-row li:not(:first-child) {
+  margin-top: 0.8em;
+}
+.footer-middle-row ul li a {
+  color: #a7a7a7;
+  text-decoration: none;
+}
+.footer-middle-row ul li a:hover {
+  color: #2a8ded;
+}
+
+.footer-middle-row input,
+.footer-middle-row button {
+  font-size: 1em;
+  padding: 1em;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.footer-middle-row button {
+  background-color: #c7940a;
+  color: #ffffff;
+}
+
 .social-media-icon svg {
   cursor: pointer;
   margin: 20px 0 20px 30px;

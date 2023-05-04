@@ -44,12 +44,6 @@ const NavigationBar = () => {
             >
               Blog
             </NavLink>
-            <NavLink
-              to="/aboutus"
-              className={({ isActive }) => (isActive ? "active" : "default")}
-            >
-              About Us
-            </NavLink>
           </Nav>
 
           <Nav className="align-items-lg-center md:flex-rows">
@@ -60,7 +54,10 @@ const NavigationBar = () => {
                   title={user.displayName}
                 >
                   <img
-                    src={user.photoURL}
+                    src={
+                      user.photoURL ||
+                      "https://xsgames.co/randomusers/avatar.php?g=male"
+                    }
                     alt=""
                     className="rounded-circle"
                     style={{
