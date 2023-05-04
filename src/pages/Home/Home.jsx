@@ -5,6 +5,7 @@ import ChefCard from "./ChefCard";
 import { Spinner } from "react-bootstrap";
 import "../../styles/home.css";
 import PopularRecipes from "./PopularRecipes";
+import FAQ from "./FAQ";
 
 const Home = () => {
   const [chefData, setChefData] = useState([]);
@@ -35,6 +36,7 @@ const Home = () => {
       </div>
 
       <PopularRecipes />
+      <FAQ />
     </div>
   );
 };

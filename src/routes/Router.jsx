@@ -7,6 +7,7 @@ import Blog from "../pages/Blog/Blog";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import ChefRecipe from "../pages/ChefRecipe/ChefRecipe";
+import AboutUs from "../pages/About/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog />,
+      },
+      {
+        path: "about",
+        element: <AboutUs />,
       },
       {
         path: "login",

@@ -28,6 +28,8 @@ const Footer = () => {
         </div>
       </div>
 
+      <div className="line mx-auto mb-5 mt-3"></div>
+
       <Container>
         <Row className="g-4 footer-middle-row">
           <Col lg={4}>

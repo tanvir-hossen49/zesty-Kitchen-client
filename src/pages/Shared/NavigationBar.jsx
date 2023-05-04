@@ -44,6 +44,13 @@ const NavigationBar = () => {
             >
               Blog
             </NavLink>
+
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "active" : "default")}
+            >
+              About
+            </NavLink>
           </Nav>
 
           <Nav className="align-items-lg-center md:flex-rows">
