@@ -62,7 +62,7 @@ const NavigationBar = () => {
                 >
                   <img
                     src={user.photoURL}
-                    alt=""
+                    alt="profile-img"
                     className="rounded-circle"
                     style={{
                       width: "50px",
