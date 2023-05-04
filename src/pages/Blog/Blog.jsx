@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Container, Table } from "react-bootstrap";
+import { Document } from "react-pdf";
 import "../../styles/blog.css";
 
 const Blog = () => {
@@ -64,14 +65,105 @@ const Blog = () => {
           </tbody>
         </Table>
       </div>
+
       <div className="mt-3">
         <h2 className="blog-heading">
-          2{")"}Validate React props using PropTypes
+          2{")"}How to validate React props using PropTypes
         </h2>
 
         <p>
-          React provides a built-in package called PropTypes that allows you to
-          validate the data types of props passed to a component.
+          React provides a package called prop-types that allows you to validate
+          the props passed to a React component. The prop-types package provides
+          a set of validators that you can use to specify the type and shape of
+          the props that your component expects.
+        </p>
+        <ul>
+          <li>
+            <span>PropTypes.any :</span> The prop can be of any data type.
+          </li>
+          <li>
+            <span>PropTypes.bool :</span> The prop should be a Boolean.
+          </li>
+          <li>
+            <span> PropTypes.number :</span> The prop should be a number.
+          </li>
+          <li>
+            <span> PropTypes.string :</span> The prop should be a string.
+          </li>
+        </ul>
+      </div>
+
+      <div className="mt-3">
+        <h2 className="blog-heading">
+          3{")"}Differences between nodejs and express js
+        </h2>
+        <Table striped bordered hover variant="light" className="w-100">
+          <thead>
+            <tr>
+              <th>Node.js </th>
+              <th>Express.js</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                A runtime environment for executing JavaScript code outside of a
+                web browser
+              </td>
+              <td>
+                A web framework for building web applications on top of Node.js
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Provides core functionality for building server-side
+                applications, such as file system operations and network
+                communication
+              </td>
+              <td>
+                Provides a set of features and tools for building web
+                applications, such as routing and middleware
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Can be used to build a variety of applications, including
+                servers, command-line tools, and desktop applications
+              </td>
+              <td>Primarily used for building web applications and APIs</td>
+            </tr>
+            <tr>
+              <td>Low-level and requires more coding to build applications</td>
+              <td>
+                Higher-level and provides a simpler and more efficient way to
+                build web applications
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Does not provide built-in support for handling HTTP requests and
+                responses
+              </td>
+              <td>
+                Provides built-in support for handling HTTP requests and
+                responses
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
+
+      <div className="mt-3">
+        <h2 className="blog-heading">
+          4{")"}What is a custom hook, and why will you create a custom hook?
+        </h2>
+
+        <p>
+          In React, a custom hook is a JavaScript function that starts with the
+          prefix {"use"} and can contain any React hook, as well as any other
+          logic you might need to reuse across multiple components. Custom hooks
+          allow you to extract and reuse component logic without duplicating
+          code, making it easier to manage and maintain your codebase.
         </p>
       </div>
     </Container>
