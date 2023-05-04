@@ -38,7 +38,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/chef-data/${params.id}`),
+          fetch(
+            `https://assignment-server-tanvir-hossen49.vercel.app/chef-data/${params.id}`
+          ),
       },
     ],
   },

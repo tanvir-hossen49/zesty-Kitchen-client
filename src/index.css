@@ -12,7 +12,15 @@
 a {
   text-decoration: none !important;
 }
-
+button:disabled {
+  color: rgb(115, 115, 115);
+  background-color: #ebdfd4;
+  user-select: none;
+}
+button:disabled:hover {
+  color: rgb(115, 115, 115);
+  background-color: #ebdfd4;
+}
 /*
 ------------------
     NAVIGATION BAR
@@ -72,7 +80,7 @@ a {
 ------------------*/
 .hero-section {
   width: 100%;
-  height: calc(100vh - 66px);
+  height: 550px;
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.5),

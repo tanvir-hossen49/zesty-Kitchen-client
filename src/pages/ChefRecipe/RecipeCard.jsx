@@ -1,12 +1,21 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-
+import { FaStar, FaRegStar, FaRegHeart } from "react-icons/fa";
+import Rating from "react-rating";
+import { showToast } from "../../utilities/showToast";
 // eslint-disable-next-line react/prop-types
 const RecipeCard = ({ recipes }) => {
-  console.log(recipes);
+
+  const [isDisable, setDisable] = useState()
+
+  const handleFavoriteButton = e => {
+    showToast("success", "Added Favorite");
+    e.target.setAttribute("disabled", "disabled");
+  };
+
   return (
     <div>
       <h2 className="text-center fw-bold fs-2 mt-4">Our_recipes</h2>
@@ -18,10 +27,10 @@ const RecipeCard = ({ recipes }) => {
             ingredients,
             cooking_method,
             rating,
+            id,
           } = recipe;
-          console.log(ingredients);
           return (
-            <Col>
+            <Col key={id}>
               <Card>
                 <div className="recipe-card">
                   <Card.Img
@@ -40,17 +49,42 @@ const RecipeCard = ({ recipes }) => {
 
                   <Card.Title className="gap-2 mt-3">
                     Ingredient:
-                    {ingredients.map(ingredient => {
-                      return (
-                        <ul type="circle" className="mt-3 text-capitalize">
-                          <li className="fs-6">{ingredient}</li>
-                        </ul>
-                      );
-                    })}
+                    <ul type="circle" className="mt-3 text-capitalize">
+                      {ingredients.map((ingredient, index) => (
+                        <li key={index} className="fs-6 mt-3">
+                          {ingredient}
+                        </li>
+                      ))}
+                    </ul>
                   </Card.Title>
-                  <Card.Text>{cooking_method}</Card.Text>
 
-                  <button className="button w-100 mt-auto">Favorite</button>
+                  <Card.Text>
+                    <span className="fw-bold pe-2">Cooking Method:</span>
+                    {cooking_method}
+                  </Card.Text>
+
+                  <div className="fs-3 mb-3 d-flex align-items-center justify-content-between">
+                    <Rating
+                      placeholderRating={Math.round(rating)}
+                      readonly
+                      emptySymbol={<FaRegStar />}
+                      placeholderSymbol={<FaStar className="text-warning" />}
+                      fullSymbol={<FaStar />}
+                    />
+                    <span className="ms-3 inline-block">
+                      {"("} {rating.toFixed(1)} {")"}
+                    </span>
+                  </div>
+
+                  <button
+                    className="button w-100 mt-auto"
+                    onClick={handleFavoriteButton}
+                  >
+                    Favorite
+                    <span className="ms-3">
+                      <FaRegHeart />
+                    </span>
+                  </button>
                 </Card.Body>
               </Card>
             </Col>
