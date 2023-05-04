@@ -1,0 +1,21 @@
+.login-form {
+  width: 100% !important;
+}
+@media screen and (min-width: 992px) {
+  .login-form {
+    width: 40% !important;
+  }
+}
+
+.divider .text {
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #95a0a7;
+  padding: 0 26px 0 22px;
+}
+.divider .line {
+  width: 145px;
+  height: 0px;
+  border: 1px solid #95a0a7;
+}

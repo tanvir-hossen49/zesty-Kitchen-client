@@ -8,6 +8,7 @@ import { showToast } from "../../utilities/showToast";
 import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
 import GoogleButtonComponent from "./GoogleButton";
 import GithubButtonComponent from "./GithubButton";
+import "../../styles/login.css";
 
 const Login = () => {
   const { signInUser } = useContext(AuthContext);

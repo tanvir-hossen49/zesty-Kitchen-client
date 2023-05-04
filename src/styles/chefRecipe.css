@@ -1,0 +1,24 @@
+.chef-recipe-img {
+  max-width: 500px;
+  max-width: 500px;
+  object-fit: cover;
+}
+.chef-recipe-chef-info span {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  font-weight: 600;
+}
+.chef-recipe-chef-info span:hover {
+  background-color: #ffc107;
+  text-align: #fff;
+}
+.recipe-card {
+  overflow: hidden;
+  transition: transform 0.5s;
+}
+.recipe-card img:hover {
+  transform: scale(1.2);
+}

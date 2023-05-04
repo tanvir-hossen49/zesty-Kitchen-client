@@ -3,6 +3,7 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import chef_placeholder from "../../assets/placeholder.png";
 
 const ChefCard = ({ chefData }) => {
   const { chef_img, id, name, years_of_experience, number_of_recipes, likes } =
@@ -10,7 +11,11 @@ const ChefCard = ({ chefData }) => {
   return (
     <div className=" d-flex align-items-center gap-3 border rounded chef-card">
       <div className="chef-profile-picture">
-        <LazyLoadImage src={chef_img} effect="blur" placeholderSrc={chef_img} />
+        <LazyLoadImage
+          src={chef_img}
+          effect="blur"
+          placeholderSrc={chef_placeholder}
+        />
       </div>
       <div>
         <h4 className="fw-bolder">{name}</h4>

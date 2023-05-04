@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Container, Table } from "react-bootstrap";
+import "../../styles/blog.css";
 
 const Blog = () => {
   return (
     <Container className="mt-4">
       <div>
-        <caption className="text-nowrap fs-3">
+        <h2 className="blog-heading">
           1{")"}Differences between uncontrolled and controlled components
-        </caption>
+        </h2>
         <Table striped bordered hover variant="light" className="w-100">
           <thead>
             <tr>
@@ -64,7 +65,7 @@ const Blog = () => {
         </Table>
       </div>
       <div className="mt-3">
-        <h2 className="fs-3 text-secondary fw-normal">
+        <h2 className="blog-heading">
           2{")"}Validate React props using PropTypes
         </h2>
 

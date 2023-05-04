@@ -2,15 +2,17 @@
 import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { showToast } from "../../utilities/showToast";
 import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
 import GoogleButtonComponent from "./GoogleButton";
 import GithubButtonComponent from "./GithubButton";
+import "../../styles/login.css";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = e => {
     e.preventDefault();
@@ -33,6 +35,7 @@ const Register = () => {
         })
           .then(() => {
             showToast("success", "user update successful");
+            navigate("/");
             form.reset();
           })
           .catch(error => {

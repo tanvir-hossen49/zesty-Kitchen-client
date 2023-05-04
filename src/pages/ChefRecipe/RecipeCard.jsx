@@ -8,12 +8,12 @@ import Rating from "react-rating";
 import { showToast } from "../../utilities/showToast";
 // eslint-disable-next-line react/prop-types
 const RecipeCard = ({ recipes }) => {
+  const [isDisable, setDisable] = useState([]);
 
-  const [isDisable, setDisable] = useState()
-
-  const handleFavoriteButton = e => {
+  const handleFavoriteButton = id => {
+    const selected = [...isDisable, id];
+    setDisable(selected);
     showToast("success", "Added Favorite");
-    e.target.setAttribute("disabled", "disabled");
   };
 
   return (
@@ -78,7 +78,8 @@ const RecipeCard = ({ recipes }) => {
 
                   <button
                     className="button w-100 mt-auto"
-                    onClick={handleFavoriteButton}
+                    disabled={isDisable.find(d => d === id)}
+                    onClick={() => handleFavoriteButton(id)}
                   >
                     Favorite
                     <span className="ms-3">

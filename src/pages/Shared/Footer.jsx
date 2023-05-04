@@ -7,6 +7,7 @@ import {
   FaGithub,
   FaGoogle,
 } from "react-icons/fa";
+import "../../styles/footer.css";
 
 const Footer = () => {
   return (

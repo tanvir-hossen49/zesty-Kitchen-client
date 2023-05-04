@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import HeroComponent from "./HeroComponent";
 import ChefCard from "./ChefCard";
 import { Spinner } from "react-bootstrap";
+import "../../styles/home.css";
 
 const Home = () => {
   const [chefData, setChefData] = useState([]);

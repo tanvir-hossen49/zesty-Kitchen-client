@@ -4,6 +4,7 @@ import NavigationBar from "../Shared/NavigationBar";
 import Footer from "../Shared/Footer";
 import man from "../../assets/icon.png";
 import { Link } from "react-router-dom";
+import "../../styles/errorPage.css";
 
 const ErrorPage = () => {
   return (

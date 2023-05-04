@@ -1,0 +1,23 @@
+.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.default {
+  color: #403f3f;
+  font-weight: 400;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #403f3f;
+  transition: color 0.3s;
+}
+.nav-brand:hover {
+  color: var(--primary-color);
+}
+
+.responsive-navbar-nav a {
+  color: #403f3f;
+}

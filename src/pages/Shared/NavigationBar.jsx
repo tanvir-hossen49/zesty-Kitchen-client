@@ -7,6 +7,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { showToast } from "../../utilities/showToast";
 import { showFirebaseError } from "../../utilities/firebaseErrorMessage";
+import "../../styles/navBar.css";
 
 const NavigationBar = () => {
   const { user, logOutUser } = useContext(AuthContext);
